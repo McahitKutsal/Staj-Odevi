@@ -4,10 +4,9 @@ const Message = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMesaage] = useState('');
-
+    //Form Submit edildiğinde aşağıdaki Typescript fonksiyonu çalışıp Golang ile yazdıpımız API'ya post isteği atacak ve formdan gelen verileri gönderecek
     const submit = async (e: SyntheticEvent) => {
-        e.preventDefault();
-
+        e.preventDefault()
         await fetch('http://localhost:8000/api/mesajgonder', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
@@ -17,6 +16,7 @@ const Message = () => {
                 message
             })
         });
+        //console.log(name,email,message)
 
     }
 

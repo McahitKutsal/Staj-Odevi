@@ -13,6 +13,7 @@ func main() {
 	database.Connect()
 
 	app := fiber.New()
+	//Front end'den veri gönderebilmek için Cors altında Credentials'ı açmamız gerekiyor açmayınca hata veriyor
 	app.Use(cors.New(cors.Config{
 		AllowCredentials: true,
 	}))

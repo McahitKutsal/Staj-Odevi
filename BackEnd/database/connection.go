@@ -15,7 +15,8 @@ func Connect() {
 	if err != nil {
 		panic("Bağlantıda sorun var!!!")
 	}
+	//Kurulan bağlantıyı global olarak diğer package'lar ile yaplaşıyoruz
 	DB = conn
-
+	//Burada User Struct'ını Mysql'e migrate ederek user tablosunun otomatik oluşmasını sağlıyoruz
 	conn.AutoMigrate(&models.User{})
 }
